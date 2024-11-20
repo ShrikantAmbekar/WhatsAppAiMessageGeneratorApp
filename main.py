@@ -17,7 +17,7 @@ Topic: {occasion}
 
 Message {number}:
     - message 
-=====================================================================================
+================================================================================
 
 please follow the instructions:
 1. Make sure name is included in message 
@@ -64,13 +64,13 @@ recipient_role = st.selectbox(
 
 recipient_name = st.text_input("Name:")
 
-if st.button("Generate Message"):
-    if not recipient_name.strip():
-        st.warning("Please enter a name to generate a message.")
-    elif user_role == "Select who you are...":
+if st.button("Generate Message"):    
+    if user_role == "Select who you are...":
         st.warning("Please Select who you are.")
     elif recipient_role == "Select for whom this message is for...":
         st.warning("Please Select for whom this message is for.")
+    elif recipient_name.strip():
+        st.warning("Please enter a name to generate a message.")
     else:
         response = message_chain.invoke(
             {"role": user_role, "number": num_messages, "occasion": occasion, "message_for": recipient_role,
