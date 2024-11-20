@@ -19,6 +19,7 @@ Message {number}:
     - message 
 ================================================================================
 
+
 please follow the instructions:
 1. Make sure name is included in message 
 2. Add some related emojis 
@@ -69,7 +70,7 @@ if st.button("Generate Message"):
         st.warning("Please Select who you are.")
     elif recipient_role == "Select for whom this message is for...":
         st.warning("Please Select for whom this message is for.")
-    elif recipient_name.strip():
+    elif not recipient_name.strip():
         st.warning("Please enter a name to generate a message.")
     else:
         response = message_chain.invoke(
