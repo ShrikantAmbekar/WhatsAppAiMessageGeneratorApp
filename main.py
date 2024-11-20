@@ -41,7 +41,7 @@ st.subheader("Generator WhatsApp Messages for your Love ones...")
 
 user_role = st.selectbox(
     "You are:",
-    ["Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
+    ["Select who you are...", "Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
 )
 
 num_messages = st.number_input(
@@ -59,7 +59,7 @@ occasion = st.radio(
 
 recipient_role = st.selectbox(
     "Message for:",
-    ["Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
+    ["Select for whom this message is for...", "Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
 )
 
 recipient_name = st.text_input("Name:")
@@ -67,8 +67,12 @@ recipient_name = st.text_input("Name:")
 if st.button("Generate Message"):
     if not recipient_name.strip():
         st.warning("Please enter a name to generate a message.")
+    elif user_role == "Select who you are...":
+        st.warning("Please Select who you are.")
+    elif recipient_role == "Select for whom this message is for...":
+        st.warning("Please Select for whom this message is for.")
     else:
         response = message_chain.invoke(
             {"role": user_role, "number": num_messages, "occasion": occasion, "message_for": recipient_role,
              "name": recipient_name})
-        st.write(response.content)
+        st.success(response.content)
