@@ -13,7 +13,7 @@ gemini_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro-002")
 message_template = """I am a {role}. Give me {number} WhatsApp message for {occasion} for my {message_for} and 
 her/his name is {name}. following this format: 
 
-Topic: {occasion}
+Occasion: {occasion}
 
 Message {number}:
     - message 
