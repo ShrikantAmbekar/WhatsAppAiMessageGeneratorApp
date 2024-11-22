@@ -4,7 +4,7 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyAss9bhYoHWfQHMsFe7J54e_JTQUN7Fpd0"
+os.environ['GOOGLE_API_KEY'] = ""
 
 gemini_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro-002")
 
@@ -42,7 +42,7 @@ st.subheader("Generator WhatsApp Messages for your Love ones...")
 
 user_role = st.selectbox(
     "You are:",
-    ["Select who you are...", "Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
+    ["Select who you are...", "Brother", "Sister", "Father", "Mother", "Husband", "Wife", "Employee", "Boss", "Colleague"]
 )
 
 num_messages = st.number_input(
@@ -60,7 +60,7 @@ occasion = st.radio(
 
 recipient_role = st.selectbox(
     "Message for:",
-    ["Select for whom this message is for...", "Brother", "Sister", "Father", "Mother", "Employee", "Boss"]
+    ["Select for whom this message is for...", "Brother", "Sister", "Father", "Mother", "Husband", "Wife", "Employee", "Boss", "Colleague"]
 )
 
 recipient_name = st.text_input("Name:")
