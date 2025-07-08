@@ -4,7 +4,7 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyAss9bhYoHWfQHMsFe7J54e_JTQUN7Fpd0"
+os.environ['GOOGLE_API_KEY'] = "AIzaSyDK71x1rJCzLsAXRvfoOEMP8bwFX-V7-TU"
 
 gemini_model = ChatGoogleGenerativeAI(model="gemini-1.5-pro-002")
 
